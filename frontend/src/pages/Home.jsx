@@ -1,6 +1,7 @@
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import avatarIcon from "../assets/images/avatar-icon.png";
+import faqImg from "../assets/images/faq-img.png";
 import featureImg from "../assets/images/feature-img.png";
 import heroImg01 from "../assets/images/hero-img01.png";
 import heroImg02 from "../assets/images/hero-img02.png";
@@ -11,6 +12,7 @@ import icon03 from "../assets/images/icon03.png";
 import videoIcon from "../assets/images/video-icon.png";
 import About from "../components/About/About";
 import DoctorList from "../components/Doctors/DoctorList";
+import FaqList from "../components/Faq/FaqList";
 import ServiceList from "../components/Services/ServiceList";
 
 const Home = () => {
@@ -164,9 +166,7 @@ const Home = () => {
         </div>
       </section>
       {/* ================= services section end ================= */}
-
       {/* ================= feature section ================= */}
-
       <section>
         <div className="container">
           <div className="flex items-center justify-between flex-col lg:flex-row">
@@ -222,7 +222,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* ================= feature section end ================= */}
       {/* ================= our great doctors ================= */}
       <section>
@@ -237,6 +236,24 @@ const Home = () => {
           <DoctorList />
         </div>
       </section>
+      {/* ================= our great doctors end ================= */}
+      {/* =================== fac section =================== */}
+      <section>
+        <div className="container">
+          <div className="flex justify-between gap-[50px] lg:gap-0">
+            <div className="w-1/2 hidden md:block">
+              <img src={faqImg} alt="" />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h2 className="heading">
+                Most questions by our beloved patients
+              </h2>
+              <FaqList />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* ================= fac section end ================= */}
     </>
   );
 };
