@@ -14,6 +14,7 @@ import About from "../components/About/About";
 import DoctorList from "../components/Doctors/DoctorList";
 import FaqList from "../components/Faq/FaqList";
 import ServiceList from "../components/Services/ServiceList";
+import Testimonial from "../components/Testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -75,7 +76,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* ================= hero section end ================= */}
+      {/* ================= how it works section ================= */}
       <section>
         <div className="container">
           <div className="lg:w-[470px] mx-auto">
@@ -165,7 +166,6 @@ const Home = () => {
           <ServiceList />
         </div>
       </section>
-      {/* ================= services section end ================= */}
       {/* ================= feature section ================= */}
       <section>
         <div className="container">
@@ -222,7 +222,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* ================= feature section end ================= */}
       {/* ================= our great doctors ================= */}
       <section>
         <div className="container">
@@ -236,7 +235,6 @@ const Home = () => {
           <DoctorList />
         </div>
       </section>
-      {/* ================= our great doctors end ================= */}
       {/* =================== fac section =================== */}
       <section>
         <div className="container">
@@ -253,7 +251,19 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* ================= fac section end ================= */}
+      {/* ================= testimonial ================= */}
+      <section>
+        <div className="container">
+          <div className="xl:w-[470px] mx-aut">
+            <h2 className="heading text-center">What our patients say</h2>
+            <p className="text__para text-center">
+              World-class care for everyone. Our health System offers unmatched,
+              expert health care.
+            </p>
+          </div>
+          <Testimonial />
+        </div>
+      </section>
     </>
   );
 };
