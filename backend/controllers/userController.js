@@ -1,3 +1,5 @@
+import Booking from "../models/BookingSchema.js";
+import Doctor from "../models/DoctorSchema.js";
 import User from "../models/UserSchema.js";
 
 export const updateUser = async (req, res) => {
@@ -88,6 +90,31 @@ export const getUserProfile = async (req, res) => {
       success: true,
       message: "Profile info is getting",
       data: { ...rest },
+    });
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ success: false, message: "Something went wrong, cannot get" });
+  }
+};
+
+export const getMyAppointments = async (req, res) => {
+  try {
+    //STEP 1: retrieve appointments from booking for specific user
+    const bookings = await Booking.find({ user: req.userId });
+
+    //STEP 2: extract doctor ids from appointment booking
+    const doctorIds = bookings.map((el) => el.doctor.id);
+
+    //STEP 3: retrieve doctors using doctor ids
+    const doctors = await Doctor.find({ _id: { $in: doctorIds } }).select(
+      "-password"
+    );
+    res.status(200).send({
+      success: true,
+      message: "Appointments are getting",
+      data: doctors,
     });
   } catch (error) {
     console.error(error);
