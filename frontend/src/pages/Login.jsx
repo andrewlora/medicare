@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import HashLoader from "react-spinners/HashLoader";
 import { toast } from "react-toastify";
 import { BASE_URL } from "../config";
-import { authContext } from "../context/AuthContext.jsx";
+import { authContext } from "../context/AuthContext";
 
 const Login = () => {
   const [formData, setFormData] = useState({
