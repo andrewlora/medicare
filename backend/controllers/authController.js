@@ -66,7 +66,7 @@ export const login = async (req, res) => {
   try {
     let user = null;
     const patient = await User.findOne({ email });
-    const doctor = await User.findOne({ email });
+    const doctor = await Doctor.findOne({ email });
     if (patient) {
       user = patient;
     }
