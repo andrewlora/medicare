@@ -59,7 +59,7 @@ function Profile({ user }) {
       }
       setLoading(false);
       toast.success(message);
-      navigate("/user/profile/me");
+      navigate("/users/profile/me");
     } catch (error) {
       toast.error(error.message);
       setLoading(false);
